@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
 	printf("The size of an float: %ld \n", sizeof(float));
 	// size of double in C
 	printf("The size of an double: %ld \n", sizeof(double));
+	// size of long double in C
+	printf("The size of an long double: %ld \n", sizeof(long double));
 
 	printf("The size of areas (int[]): %ld\n", sizeof(areas));
 	printf("The number of ints in areas is %ld\n", sizeof(areas)/ sizeof(int));
