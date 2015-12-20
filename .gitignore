@@ -1,3 +1,9 @@
+# Temp files
+ex8/ex8
+ex8/ex8_v2
+ex8/*.swp
+*.swp
+
 # Object files
 *.o
 *.ko
