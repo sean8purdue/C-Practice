@@ -26,9 +26,9 @@ int main(int argc, char *argv[])
 
 	// setup the name
 	name[0] = 'Z';
-	name[0] = 'e';
-	name[0] = 'd';
-	name[0] = '\0';
+	name[1] = 'e';
+	name[2] = 'd';
+	name[3] = '\0';
 
 	// print them out initially
 	printf("numbers: %d %d %d %d\n",
@@ -38,6 +38,19 @@ int main(int argc, char *argv[])
 	printf("name: %c %c %c %c\n",
 			name[0], name[1],
 			name[2], name[3]);
+
+	// print character array as string
+	printf("name: %s\n", name);
+
+	// another way to use string
+	char *another = "Zed";
+
+	printf("another: %c %c %c %c\n",
+			another[0], another[1],
+			another[2], another[3]);
+
+	// print character array as string
+	printf("another: %s\n", another);
 
 	return 0;
 }
