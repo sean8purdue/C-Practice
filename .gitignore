@@ -1,6 +1,11 @@
-# Temp files
+# Make Executables
+ex9/ex9b
+ex9/init_number1
+ex9/ex9
 ex8/ex8
 ex8/ex8_v2
+
+# Temp files
 ex8/*.swp
 *.swp
 
