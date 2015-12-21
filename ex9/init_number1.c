@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
 	/* I didn't have to give all 4 elements of the arrays to initialize them. This is a short-cut that C has where, if you set just one element, it'll fill the rest in with 0.
 	 */
-	int numbers[4] = {0};
+	int numbers[4] = {1};
 	char name[4] = {'a'};
 
 	//first, print them out raw
