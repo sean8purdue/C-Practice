@@ -7,18 +7,19 @@ int main(int argc, char *argv[])
 	int numbers[4] = {1};
 	char name[4] = {'a'};
 
-	//first, print them out raw
+	// first, print them out raw
 	printf("numbers: %d %d %d %d\n",
 			numbers[0], numbers[1],
 			numbers[2], numbers[3]);
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
+	// To compare_print integer type of character array
 	printf("name: %d %d %d %d\n",
 			name[0], name[1],
 			name[2], name[3]);
 
-=======
->>>>>>> 5987dc8e8346fa6382bbfc8b7e70267396e425cd
+//=======
+//>>>>>>> 5987dc8e8346fa6382bbfc8b7e70267396e425cd
 	printf("name: %c %c %c %c\n",
 			name[0], name[1],
 			name[2], name[3]);
