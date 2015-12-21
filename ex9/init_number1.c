@@ -12,6 +12,10 @@ int main(int argc, char *argv[])
 			numbers[0], numbers[1],
 			numbers[2], numbers[3]);
 
+	printf("name: %d %d %d %d\n",
+			name[0], name[1],
+			name[2], name[3]);
+
 	printf("name: %c %c %c %c\n",
 			name[0], name[1],
 			name[2], name[3]);
