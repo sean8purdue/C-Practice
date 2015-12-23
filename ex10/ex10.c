@@ -6,7 +6,20 @@ int main(int argc, char *argv[])
 
 	// go through each string in argv
 	// why am I skipping argv[0]?
-	for (i = 1; i < argc; i++) {
+	/* The OS passes each command line argument
+	   as a string in the argv array. 
+	   The program's name (./ex10) is at 0,
+	   with the rest coming after it.*/
+
+	// passing the first argument(the program's name)
+	/* sean@seanlinux:~/git/sec/ex10$ ./ex10 te se
+	   arg 0: ./ex10
+	   arg 1: te
+	   arg 2: se
+	 */
+	// for (i = 0; i < argc; i++) {
+
+	for (i = 0; i < argc; i++) {
 		printf("arg %d: %s\n", i, argv[i]);
 	}
 	
