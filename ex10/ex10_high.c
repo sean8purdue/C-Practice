@@ -40,7 +40,8 @@ int main(int argc, char *argv[])
 	   state 4: (null)
 	   state 5: ���ģ
 	 */
-	int num_states = 6;
+	//int num_states = 6;
+	int num_states = 4;
 
 	for(i = 0; i < num_states; i++) {
 		printf("state %d: %s\n", i, states[i]);

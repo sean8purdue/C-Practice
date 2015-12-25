@@ -1,0 +1,32 @@
+/* copy string array state's elements to argv 
+ */
+
+
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+	int i = 0;
+
+	// make out own array
+	char *states[] = {
+		"California", "Oregon", 
+		"Washington", "Texas"
+	};
+	int num_states = 4;
+
+	for(i = 0; i < num_states; i++) {
+
+		states[i] = argv[i+1];
+
+		printf("arg %d: %s\n", i, argv[i+1]);
+
+		printf("state %d: %s\n", i, states[i]);
+	}
+
+//	for (i = 1; i < argc; i++) {
+//		printf("arg %d: %s\n", i, argv[i]);
+//	}
+
+	return 0;
+}
