@@ -1,6 +1,6 @@
 CFLAGS=-Wall	-g
 
-all:	ex12	ex11_reverse	
+all:	ex12	
 	
 	
 	
