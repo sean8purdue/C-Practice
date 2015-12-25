@@ -1,4 +1,8 @@
-/* copy string array state's elements to argv 
+/* copy argv to string array state's elements
+   there is one problem, when argc is higher than num_states,
+   cann't copy the redundant argvs to states array.
+   How ot set varied arrays?
+   ??????????????
  */
 
 
@@ -19,7 +23,7 @@ int main(int argc, char *argv[])
 
 		states[i] = argv[i+1];
 
-		printf("arg %d: %s\n", i, argv[i+1]);
+		printf("arg %d: %s\n", i+1, argv[i+1]);
 
 		printf("state %d: %s\n", i, states[i]);
 	}
