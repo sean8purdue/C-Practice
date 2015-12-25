@@ -57,6 +57,17 @@ int main(int argc, char *argv[])
 
 			default:
 				printf("%d: %c is not a vowel\n", i, letter);
+			
+
+			//default:
+			//	printf("%d: %c is not a vowel\n", i, letter);
+/* 
+ sean@seanlinux:~/git/sec/ex13$ ./ex13 aiedsa
+0: 'A'
+1: 'I'
+2: 'E'
+5: 'A'
+ */
 		}
 	}
 
