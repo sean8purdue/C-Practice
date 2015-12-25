@@ -17,9 +17,15 @@ int main(int argc, char *argv[])
 		switch(letter) {
 			case 'a':
 			case 'A':
-				
 				printf("%d: 'A'\n", i);
 			break;
+//			break;
+/* sean@seanlinux:~/git/sec/ex13$ ./ex13 aie
+0: 'A'
+0: 'E'
+1: 'I'
+2: 'E'
+ */
 
 			case 'e':
 			case 'E':
