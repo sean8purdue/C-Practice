@@ -12,6 +12,15 @@ int main(int argc, char *argv[])
 		i--;
 	}
 
+	// create variable length array and copy argvs to it
+	char *var[argc];
+	i = 1;
+	while(i < argc) {
+		var[i] = argv[i];
+		printf("var %d: %s\n", i, var[i]);
+		i++;
+	}
+
 	return 0;	
 
 }
