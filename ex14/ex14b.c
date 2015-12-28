@@ -4,8 +4,17 @@
 #include <ctype.h>
 
 // forward declarations
-int can_print_it(char ch);
-void print_letters(char arg[]);
+//int can_print_it(char ch);
+//void print_letters(char arg[]);
+/* comment forward declaration, make the compiler complains about
+   cann't find these two functions
+   
+result: 
+1 error:
+    can't compile: conflicting types for 'print_letters'
+2. waring:
+implicit declaration of function 'can_print_it' 
+ */
         
 void print_arguments(int argc, char *argv[])
 {
@@ -36,18 +45,6 @@ int can_print_it(char ch)
 
 int main(int argc, char *argv[])
 {
-	//print_arguments(argc+1, argv);
-	/* when call print_arguments inside main,
-	   adding 1 to argc, so that it goes past
-	   the end of argv arrya
-
-Result: Segmentation fault
-sean@seanlinux:~/git/sec/ex14$ ./ex14 arg
-'e' == 101 'x' == 120 
-'a' == 97 'r' == 114 'g' == 103 
-Segmentation fault (core dumped)
-sean@seanlinux:~/git/sec/ex14$ 
-	 */
 	print_arguments(argc, argv);
 	return 0;
 }
