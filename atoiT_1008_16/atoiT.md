@@ -13,3 +13,27 @@ This function returns the converted integral number as an int value. If no valid
 
 Like "1a56" the string contains non number charcater.
 
+## Test2
+
+- Use the value to do mathmatical caculation.
+
+~~~C
+sum = val + 1;
+~~~
+
+Mixed number character and non-number character: atoi() will return 0;
+
+- 987a9 will return 987 as an integer, can be used to do mathmatical caculation.
+
+- a987 will return 0;
+
+- a987b24 will return 0;
+
+~~~
+String value = 98993489, Int value = 98993489
+String value = 98993489, Int value(sum) = 98993490
+String value = Can't transfer string, Int value = 0
+String value = 987a9, Int value = 987
+String value = 987a9, Int value(sum) = 988
+String value = a987, Int value = 0
+String value = a987b24, Int value = 0~~~ 
