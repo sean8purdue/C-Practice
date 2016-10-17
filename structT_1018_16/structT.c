@@ -26,7 +26,8 @@ struct Person *Person_create(char *name, int age, int height, int weight)
 void Person_destroy(struct Person *who)
 {
 	assert(who != NULL);
-	free(who->name);
+	// Test1_Leak Test
+	/*free(who->name);*/
 	free(who);
 }
 
