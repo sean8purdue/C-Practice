@@ -10,6 +10,30 @@ struct Person {
 	int weight;
 };
 
+void memdump(char * p , int len) {
+	// Add your code here.
+	int i;
+	int j;
+	for (i=0; i < len; i++) {
+		printf("0x%08x: ", *(unsigned char *)p);
+
+		int n = len - i;
+		if ( n > 16 ) n = 16;
+		for (j = 0; j < n; j++) {
+			printf("%02x ", *(unsigned char *) (p+j) );
+		}
+		for (;j<16;j++) {
+			printf("   ");
+		}
+		for (j = 0; j < n; j++) {
+			printf("%c", ((*p)>=32 && (*p) <= 127)?*p:'.');
+			p ++;
+			i ++;
+		}
+		printf("\n");
+	}
+}
+
 struct Person *Person_create(char *name, int age, int height, int weight)
 {
 	struct Person *who = malloc(sizeof(struct Person));
@@ -28,6 +52,8 @@ void Person_destroy(struct Person *who)
 	assert(who != NULL);
 	// Test1_Leak Test
 	/*free(who->name);*/
+
+	free(who->name);
 	free(who);
 }
 
@@ -46,8 +72,21 @@ int main(int argc, char *argv[])
 			"Joe Alex", 32, 64, 140);
 	struct Person *frank = Person_create(
 			"Frank Blank", 20, 72, 180);
+
+	// Test2 create struct on Stack
+	struct Person stackP;
+	stackP.name = "Stack Person";
+	stackP.age = 5;
+	printf("StackP is at memory location %p:\n", &stackP);
+	printf("StackP.name is at memory location %p:\n", &stackP.name);
+	printf("Address StackP.age is at memory location %p:\n", &stackP.age);
+	/*memdump( (char *)stackP);*/
+	memdump((char *)&stackP, 64);
+	Person_print(&stackP);
+
 	// print them out and where they are in memory
 	printf("Joe is at memory location %p:\n", joe);
+	printf("Joe.name is at memory location %p:\n", joe->name);
 	Person_print(joe);
 	printf("Frank is at memory location %p:\n", frank);
 	Person_print(frank);
