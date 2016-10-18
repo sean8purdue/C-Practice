@@ -15,7 +15,9 @@ void memdump(char * p , int len) {
 	int i;
 	int j;
 	for (i=0; i < len; i++) {
-		printf("0x%08x: ", *(unsigned char *)p);
+		/*printf("0x%08x: ", p);*/
+		// print the pointer address, not the value of pointer
+		printf("%p: ", p);
 
 		int n = len - i;
 		if ( n > 16 ) n = 16;
