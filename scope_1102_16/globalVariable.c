@@ -2,7 +2,8 @@
 
 void print1(char *p1) {
 	printf("%s\n", p1);
-	printf("print2 print g1: %d\n", g1);
+	//can't access globale variable g1 which declared after
+	/*printf("print2 print g1: %d\n", g1);*/
 }
 
 int g1 = 1;
