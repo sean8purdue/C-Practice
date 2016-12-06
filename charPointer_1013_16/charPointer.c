@@ -35,7 +35,7 @@ int main()
 	//http://stackoverflow.com/questions/25653034/the-difference-between-char-and-char
 	//http://stackoverflow.com/questions/10186765/char-array-vs-char-pointer-in-c
 	//
-	 char c = 'H';                    // A character
+   char c = 'H';                    // A character
    char* pC = &c;                   // A pointer to a single character; IS NOT A STRING
    //
    // An array of characters; IS NOT A STRING
