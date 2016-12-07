@@ -83,5 +83,11 @@ int main() {
 	// compile error: assign char * pointer to const char array;
 #endif
 
+	const char *csp1;
+	csp1 = cs1;
+	printf("static string pointer output in Stack: %s\n", csp1);
+	// compele error: cannot change const char *pointer content
+	/*csp1[0] = 'A';*/
+
 
 }
