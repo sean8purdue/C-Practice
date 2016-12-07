@@ -30,11 +30,15 @@ int main() {
 	printf("\n");
 	printf("change the contents of s3 and s4\n");
 
+
 #if 0
 	s3[0] = 'A';
+	strcpy(s3, "change Str");
 	printf("The first Character of String3 is \"%c\".\n", s3[0]);
 	// The above statements doesn't work as expected. Since the contents of s3, "Normal String3" is allocated in the READ-Only area of memory - Data Section.
 	
+	//change the contents of s3 and s4
+	//[1]    22774 bus error  ./constChar
 
 #endif
 	// Dynamically allocate an string array
