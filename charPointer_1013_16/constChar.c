@@ -63,4 +63,19 @@ int main() {
 	// compile error: cannot free a const char *pointer;
 	/*free(dcs1);*/
 
+	printf("\n");
+	// Test3: Static allocated string in Stack;
+	char ss1[] = "Static allocated String in Stack";
+	char *ssp1;
+	ssp1 = ss1;
+	printf("static string in Stack ss1: %s\n", ssp1);
+	ssp1[0] = 'A';
+	printf("static string in Stack ss1: %s\n", ssp1);	// Work! Change first character from 'S' to 'A'
+						// change char *s3 = "string" doesn't work.
+						// this may conclude that char ss1[] is allocated in Stack;
+
+	/*const char cs1[] = "const static allocated string in Stack";*/
+	/*printf("static string in Stack ss1: %s\n", cs1);*/
+
+
 }
