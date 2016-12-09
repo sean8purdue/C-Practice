@@ -10,7 +10,7 @@ November 8th, 2016
 
 This project is just for learning some unfamiliar contents of C.
 
-** Features
+## Features
 
 - [ ] Char Array
     - [X] Char Pointers (Web Reference)
