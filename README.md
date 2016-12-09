@@ -10,8 +10,16 @@ November 8th, 2016
 
 This project is just for learning some unfamiliar contents of C.
 
-* String, Char Array, Char Pointer
+** Features
 
-* Struct
+- [ ] Char Array
+    - [X] Char Pointers (Web Reference)
+    - [X] strcpy (Sean)
 
-* Signal
+- [X] Struct
+
+- [ ] Signal
+
+## Contributors
+
+@GuoLi (https://github.com/sean8purdue)
