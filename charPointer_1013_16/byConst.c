@@ -17,8 +17,19 @@ int main() {
     // const array
     constArray(ch2);
 
+    // run time error
+    // Cast const char array to char array test
+    // in byConst g
+    // [1]    6933 bus error  ./a.out
+    printf("\nCast const char array to char array test\n");
+    byConst( (char *) ch2);
+    for (int i = 0; i < 3; i++) {
+        printf("in byConst %c\n", *(ch2 + i));
+    }
+
 }
 
+// not usually used
 void byConst(char * const ch) {
     for (int i = 0; i < 3; i++) {
         printf("in byConst %c\n", *(ch+i));
