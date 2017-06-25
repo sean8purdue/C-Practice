@@ -40,6 +40,10 @@ void arrayPass(int mark[], int size) {
     printf("in arrayPass mark = %p\n", mark);
     printf("in arrayPass mark[1] = %p\n", &mark[1]);
     printf("in arrayPass mark[2] = %p\n", &mark[2]);
+
+    // change original array contents
+    mark[0] = 21;
+    mark[1] = 22;
 }
 
 
@@ -72,6 +76,9 @@ int main() {
 
     arrayPass(marks, 3);
 
+    // change array contents in arrayPass()
+    printf("in main marks = %d\n", marks[0]);
+    printf("in main marks[1] = %d\n", marks[1]);
 
 }
 
