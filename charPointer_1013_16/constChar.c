@@ -86,8 +86,23 @@ int main() {
 	const char *csp1;
 	csp1 = cs1;
 	printf("static string pointer output in Stack: %s\n", csp1);
-	// compele error: cannot change const char *pointer content
+	// compile error: cannot change const char *pointer content
 	/*csp1[0] = 'A';*/
+
+    // Test5 
+    const char *csp2 = "const static string in Data.";
+    strcpy(ss1, csp2);
+	printf("strcpy: %s\n", ss1);
+
+	// compile error: cannot change const char *pointer content
+    /*strcpy(csp2, ss1);*/
+
+#if 0
+    // copy too much chars to cs1, overflow
+    const char *csp3 = "constconstconstconst    const static string in Data.";
+    strcpy(ss1, csp3);
+	printf("strcpy: %s\n", ss1);
+#endif
 
 
 }
