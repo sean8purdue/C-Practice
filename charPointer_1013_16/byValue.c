@@ -55,6 +55,7 @@ void byval_char(char ch[]) {
     for (int i = 0; i < 3; i++) {
         printf("in byval char[%d] = %c\n", i, ch[i]);
     }
+    /*i = 5; // test i can't be used out of for scope*/
 
     printf("in byval ch = %p\n", ch);
     printf("in byval &ch = %p\n", &ch);
