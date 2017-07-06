@@ -1,5 +1,6 @@
 # Makefile
 
+
 pointerFunc: pointerFunction.o memdump.o
 	gcc pointerFunction.o memdump.o -o pointerFunc
 
