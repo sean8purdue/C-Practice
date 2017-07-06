@@ -26,6 +26,25 @@ So I prefer to write the depending libary in each .c file, since they will not b
 
 The dependency tree is as below:
 
-![MacDown logo](https://macdown.uranusjr.com/static/images/logo-160.png)
-
 ![MacDown logo](https://github.com/sean8purdue/C-Practice/blob/dev/functionPointer_0705_17/makfileT/dependencyTree.png)
+
+```makefile
+geom: geom.o get_double.o
+	gcc -o geom geom.o get_double.o
+
+geom.o: geom.c
+	gcc -c geom.c
+
+get_double.o: get_double.c
+	gcc -c get_double.c
+
+tip: tip.o get_double.o
+	gcc tip.o get_double.o -o tip
+
+tip.o: tip.c
+	gcc -c tip.c
+
+clean:
+	rm -f *.o geom tip
+```
+If we type `make' in this case, only geom will be build, tip will not be build. We have to use `make tip` to build tip.
