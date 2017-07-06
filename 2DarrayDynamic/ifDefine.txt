@@ -1,0 +1,35 @@
+1.
+Use #if Not #ifdef
+
+Use #if MACRO not #ifdef MACRO. Someone might write code like:
+#ifdef DEBUG
+        temporary_debugger_break();
+#endif
+Someone else might compile the code with turned-of debug info like:
+cc -c lurker.cc -DDEBUG=0
+Alway use #if, if you have to use the preprocessor. This works fine, and does the right thing, even if DEBUG is not defined at all (!)
+#if DEBUG
+        temporary_debugger_break();
+#endif
+If you really need to test whether a symbol is defined or not, test it with the defined() construct, which allows you to add more things later to the conditional without editing text that's already in the program:
+#if !defined(USER_NAME)
+ #define USER_NAME "john smith"
+#endif
+
+2.
+Using #if 0
+
+The easiest way to do this is with an #if 0 block:
+   void 
+   example()
+   {
+      great looking code
+
+      #if 0
+      lots of code
+      #endif
+    
+      more code
+    }
+You can't use /**/ style comments because comments can't contain comments and surely a large block of your code will contain a comment, won't it?
+
