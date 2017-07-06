@@ -21,3 +21,11 @@ Even we write `#include <stdio.h>` in front of our main function, and `get_doubl
 ```
 
 So I prefer to write the depending libary in each .c file, since they will not be multiple inclusion.
+
+## Share a function by header file
+
+The dependency tree is as below:
+
+![MacDown logo](https://macdown.uranusjr.com/static/images/logo-160.png)
+
+![MacDown logo](https://github.com/sean8purdue/C-Practice/blob/dev/functionPointer_0705_17/makfileT/dependencyTree.png)
