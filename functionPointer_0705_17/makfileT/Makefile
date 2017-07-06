@@ -1,4 +1,6 @@
 
+all: geom tip
+
 geom: geom.o get_double.o
 	gcc -o geom geom.o get_double.o
 

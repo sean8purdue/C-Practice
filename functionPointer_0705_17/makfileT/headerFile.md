@@ -48,3 +48,14 @@ clean:
 	rm -f *.o geom tip
 ```
 If we type `make' in this case, only geom will be build, tip will not be build. We have to use `make tip` to build tip.
+
+We need add `all: geom tip` to use `make` build all targets as geom and tip. 
+
+```bash
+➜  makfileT git:(dev) ✗ make
+gcc -c geom.c
+gcc -c get_double.c
+gcc -o geom geom.o get_double.o
+gcc -c tip.c
+gcc tip.o get_double.o -o tip
+```
