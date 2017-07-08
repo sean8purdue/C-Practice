@@ -31,3 +31,14 @@ a.out(10464,0x7fffa803f3c0) malloc: *** error for object 0x7fff5056a9d8: pointer
 *** set a breakpoint in malloc_error_break to debug
 [1]    10464 abort      ./a.out
 ```
+
+## Double Free
+Try to free a freed pointer, SEG Falut.
+
+```
+mess is 	0x7fa2aa402600
+&mess is 	0x7fff5b95c9d8
+a.out(10830,0x7fffa803f3c0) malloc: *** error for object 0x7fa2aa402600: pointer being freed was not allocated
+*** set a breakpoint in malloc_error_break to debug
+[1]    10830 abort      ./a.out
+```
