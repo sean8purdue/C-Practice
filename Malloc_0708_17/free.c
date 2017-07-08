@@ -8,7 +8,7 @@ int main () {
 	
     *mess = 33;
 	free(mess);
-    
+    mess = NULL;
 
     *mess = 53;
     printf("*mess is \t%d\n", *mess);

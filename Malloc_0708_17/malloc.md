@@ -13,3 +13,8 @@ In the file `free.c`, we `free(mess)`, but we can still assign 33 to `*mess`, an
 The dangerous is if the following malloc reuse the memory address which mess point to, our previous value 33 will be overwrite without any notice.
 
 The best practice is to assign null to the pointer `mess = null` in this case. Then if we want to assign to mess, it will have error.
+
+```
+➜  Malloc_0708_17 git:(dev) ✗ ./a.out
+[1]    10172 segmentation fault  ./a.out
+```
