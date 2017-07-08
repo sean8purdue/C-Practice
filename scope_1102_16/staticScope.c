@@ -5,23 +5,23 @@ int main() {
     int x;
 
     x = func1();
-    printf("%d\n", x);
 
-    x = func1();
-    printf("%d\n", x);
+    /*x = func1();*/
+    /*printf("%d\n", x);*/
 
-    x = func1();
-    printf("%d\n", x);
+    /*x = func1();*/
+    /*printf("%d\n", x);*/
 
     return 0;
 }
 
 int func1() {
-    for(int i; i < 2; i++) {
+    for(int i; i < 6; i++) {
         static int a = 1;
 
         a++;
+        printf("%d\n", a);
     }
-    return a++;
+    /*return a++;*/
     return 0;
 }
