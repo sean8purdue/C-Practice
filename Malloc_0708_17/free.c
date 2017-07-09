@@ -10,7 +10,7 @@ int main () {
 	free(mess);
     mess = NULL;
 
-    *mess = 53;
+    *mess = 53; //[1]    802 segmentation fault  ./free
     printf("*mess is \t%d\n", *mess);
 }
 
