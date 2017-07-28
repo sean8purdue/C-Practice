@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-void subFuc();
+//extern declaration tell that the variable is defined in another file
+extern void subFuc();
 
 int main() {
     printf("%s \n", __FILE__);
