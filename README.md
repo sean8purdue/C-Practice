@@ -18,7 +18,13 @@ This project is just for learning some unfamiliar contents of C.
 
 - [X] Struct
 
-- [ ] Signal
+- [X] Signal  (cs240 Lab7 v1)
+	- Catch SEGV, SEGINT, SEGBUS
+	- catch SEGINT with handler1, then change SEGINT handler to hanlder2
+
+- [ ] uint8_t
+	- byte operation
+	- refer to lectures by GRR_cs240.pdf (cs240 lectures)
 
 ## Contributors
 
