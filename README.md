@@ -10,6 +10,8 @@ November 8th, 2016
 
 This project is just for learning some unfamiliar contents of C.
 
+Ref:http://www.studytonight.com/c/storage-classes-in-c.php
+
 ## Features
 
 - [ ] Char Array
