@@ -16,6 +16,10 @@
 #define A 0
 #endif
 
+// debug header
+#include <stdlib.h> // exit
+void error(const char *msg) { perror(msg); exit(2); };
+
 int main() {
     char s[10] = "hello";
     DPRINT(s);
