@@ -9,15 +9,28 @@ char * getCmd1();
 void getCmdRef(char&);
 
 int main() {
+    // 1 pass by pointer 1
     char *cmd = NULL;
     getCmd(cmd);
     fprintf(stderr, "%s\n", cmd);
     // print (null) nothing since cmd is still NULL
-    cout << cmd << endl;
+    //cout << cmd << endl;
     // segmentation fault
-    fprintf(stderr, "%s\n", cmd);
+    //fprintf(stderr, "%s\n", cmd);
 
-    //cmd = getCmd();
+
+    // 2 pass by pointer 2
+    char *cmd1 = NULL;
+    cmd1 = getCmd1();
+    fprintf(stderr, "%s\n", cmd1);
+    // print hello world
+    free(cmd1);
+    fprintf(stderr, "%s\n", cmd1);
+    // Dangerous!!
+    // still print hello world, because free just tell OS, we will not use that mem, but OS might not delete the content start from this addrss.
+
+    //strcpy(cmd1, "hello world again");
+    //fprintf(stderr, "%s\n", cmd1);
 
     char cmdRef;
     //getCmdRef(cmdRef);

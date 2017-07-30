@@ -26,6 +26,28 @@ void getCmd(char *nCmd) {
 ```
 ## pass by pointer2
 
+Create a new `char * cmd` in subfunction `getCmd1()`, and return the value of `cmd` back to `main`. Then the value of pointer variable `char * cmd1` will be changed to new value.
+
+And we can also `free(cmd)` to free the mem.
+
 ```c
-char * getCmd();
+char * getCmd1();
+
+int main() {
+// 2 pass by pointer 2
+    char *cmd1 = NULL;
+    cmd1 = getCmd1();
+    fprintf(stderr, "%s\n", cmd1);
+    // print hello world
+    free(cmd1);
+    fprintf(stderr, "%s\n", cmd1);
+    // Dangerous!! still print hello world, because free just tell OS, we will not use that mem, but OS might not delete the content start from this addrss.
+}
+
+char * getCmd1() {
+    char * cmd = (char *) malloc( CMD * sizeof(char) );
+    memset(cmd, '\0', sizeof(*cmd));
+    strcpy(cmd, "hello world");
+    return cmd;
+}
 ```
