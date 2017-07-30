@@ -4,6 +4,8 @@
 
 #ifdef DEBUG
 #define DPRINT(s) fprintf(stderr, "%s\n", s)
+// cant double define DPRINT, will overwrite DPRINT(s)
+/*#define DPRINT(d) fprintf(stderr, "%d\n", d)*/
 #else
 #define DPRINT(s)
 #endif
@@ -18,5 +20,6 @@ int main() {
     char s[10] = "hello";
     DPRINT(s);
     printf("A: %d\n", A);
+    /*DPRINT(A);*/
 }
 

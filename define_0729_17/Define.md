@@ -44,3 +44,16 @@ int main() {
 ```
 
 will print A : 1, no matter compile with `gcc typeDefineDebug.c` or `gcc –D DEBUG typeDefineDebug.c`.
+
+## double define error
+ can't double define `DPRINT`, will overwrite DPRINT(s).
+
+define only define `DPRINT`, not distinguish beween `DPRINT(s)` `DPRINT(d)`.
+
+
+```c
+#define DPRINT(s) fprintf(stderr, "%s\n", s)
+#define DPRINT(d) fprintf(stderr, "%d\n", d)
+#else
+#define DPRINT(s)
+```
