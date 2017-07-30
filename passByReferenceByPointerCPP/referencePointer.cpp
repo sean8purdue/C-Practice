@@ -29,6 +29,16 @@ int main() {
     // Dangerous!!
     // still print hello world, because free just tell OS, we will not use that mem, but OS might not delete the content start from this addrss.
 
+    // Dangerous 2 !!
+    strcpy(cmd1, "hello world again");
+    fprintf(stderr, "%s\n", cmd1);
+    // still print hello world again
+    // this address is still can be used, but may be overwriten by other malloc call in the future!!!!!
+
+    // safe
+    // after free assign cmd1 to NULL
+    cmd1 = NULL;
+    // the following statements will cause SegFault!
     //strcpy(cmd1, "hello world again");
     //fprintf(stderr, "%s\n", cmd1);
 

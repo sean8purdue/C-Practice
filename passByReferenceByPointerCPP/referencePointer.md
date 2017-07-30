@@ -51,3 +51,10 @@ char * getCmd1() {
     return cmd;
 }
 ```
+
+Safely free the pointer:    // after free assign `cmd1 to NULL`
+
+```c
+free(cmd1);
+cmd1 = NULL;
+```
