@@ -1,39 +1,51 @@
+#include <stdio.h>
 #include <iostream>
 using namespace std;
 
 #define CMD 100
 
-char * getCmd();
+void getCmd(char *);
+char * getCmd1();
 void getCmdRef(char&);
 
 int main() {
-    char *cmd;
-    cmd = getCmd();
+    char *cmd = NULL;
+    getCmd(cmd);
+    fprintf(stderr, "%s\n", cmd);
+    // print (null) nothing since cmd is still NULL
     cout << cmd << endl;
-    free(cmd);
+    // segmentation fault
+    fprintf(stderr, "%s\n", cmd);
 
-    char *cmdRef;
+    //cmd = getCmd();
+
+    char cmdRef;
+    //getCmdRef(cmdRef);
+    //cout << cmdRef << endl;
 }
 
-char * getCmd() {
+void getCmd(char *nCmd) {
+    nCmd = (char *) malloc( CMD * sizeof(char) );
+    memset(nCmd, '\0', sizeof(*nCmd));
+    strcpy(nCmd, "hello world");
+}
+
+char * getCmd1() {
     char * cmd = (char *) malloc( CMD * sizeof(char) );
-    char c;
-    int i = 0;
-    // get user input string with getchar
-    while ( (c = getchar()) != '\n' && (i < (CMD-1))   ) {
-        cmd[i++] = c; 
-    }
-    cmd[i] = '\0';
+    memset(cmd, '\0', sizeof(*cmd));
+    strcpy(cmd, "hello world");
     return cmd;
 }
 
-void getCmd(char& cmdRef) {
-    cmdRef = (char *) malloc( CMD * sizeof(char) );
-    char c;
-    int i = 0;
-    // get user input string with getchar
-    while ( (c = getchar()) != '\n' && (i < (CMD-1))   ) {
-        cmdRef[i++] = c; 
-    }
-    cmdRef[i] = '\0';
+void getCmdRef(char& cmdRef) {
+    //cmdRef = (char) malloc( CMD * sizeof(char) );
+    //char c;
+    //int i = 0;
+    //// get user input string with getchar
+    //while ( (c = getchar()) != '\n' && (i < (CMD-1))   ) {
+        //cmdRef[i++] = c; 
+    //}
+    //cmdRef[i] = '\0';
+    cmdRef = 's';
+
 }
