@@ -6,7 +6,9 @@ using namespace std;
 
 void getCmd(char *);
 char * getCmd1();
+
 void getCmdRef(char&);
+void getCmdRef1(char &);
 
 int main() {
     // 1 pass by pointer 1
@@ -45,6 +47,9 @@ int main() {
     char cmdRef;
     //getCmdRef(cmdRef);
     //cout << cmdRef << endl;
+
+    char *ref1;
+    //getCmdRef1(&ref1);
 }
 
 void getCmd(char *nCmd) {
@@ -70,5 +75,9 @@ void getCmdRef(char& cmdRef) {
     //}
     //cmdRef[i] = '\0';
     cmdRef = 's';
+
+}
+
+void getCmdRef1(char& ref1) {
 
 }
