@@ -64,6 +64,12 @@ cmd1 = NULL;
 ## Pass by reference 1
 1. reference can't be reassigned, it's not variable  
 	pointer can be reassigned.
+	
+2. change the value of `*ptrArg`, let it point to different address. In this example, let it point to `char inCmdPtr`, will not change the parameter pointer in `main`, which is `char *ptr`. `char *ptr` is still point to `char ptrChar` in main.   
+
+	so after change the value of `*ptrArg`, change the value it pointed to by `*ptrArg = 'A'`, will have no effect on `char *ptr` pointed to value which is `char ptrChar`.
+
+3. use `*ptrChar` can change the value in main, which is pointed by `*ptrChar`, 
 
 ```cpp
 void cmdRef(char&);
@@ -78,6 +84,10 @@ int main() {
     cmdPtr(ptr);
     cout << "in main ptrChar: " << ptrChar << endl;
     // print nothing (null)
+	
+	 cmdPtr1(ptr);
+    cout << "in main ptrChar: " << ptrChar << endl;
+    // print C
 
 }
 
@@ -97,4 +107,18 @@ void cmdPtr(char *ptrArg) {
     *ptrArg = 'B';
     cout << "in function cmdPtr(): inCmdPtr: " << inCmdPtr << endl; 
 }
+
+void cmdPtr1(char *ptrArg) {
+    *ptrArg = 'C';
+    cout << "in function cmdPtr1(): *ptrArg: " << *ptrArg << endl; 
+}
+```
+output is below:  
+
+```bash
+A
+in function cmdPtr(): inCmdPtr: B
+in main ptrChar:
+in function cmdPtr(): inCmdPtr: C
+in main ptrChar: C
 ```

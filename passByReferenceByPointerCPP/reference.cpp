@@ -6,6 +6,7 @@ using namespace std;
 
 void cmdRef(char &);
 void cmdPtr(char *);
+void cmdPtr1(char *);
 
 //void cmdRef1(char &);
 //char * getCmd1();
@@ -21,8 +22,9 @@ int main() {
     cout << "in main ptrChar: " << ptrChar << endl;
     // print nothing (null)
 
-    //char *ref1;
-    //getCmdRef1(&ref1);
+    cmdPtr1(ptr);
+    cout << "in main ptrChar: " << ptrChar << endl;
+    // print C
 }
 
 void cmdRef(char& refArg) {
@@ -39,4 +41,9 @@ void cmdPtr(char *ptrArg) {
     ptrArg = &inCmdPtr;
     *ptrArg = 'B';
     cout << "in function cmdPtr(): inCmdPtr: " << inCmdPtr << endl; 
+}
+
+void cmdPtr1(char *ptrArg) {
+    *ptrArg = 'C';
+    cout << "in function cmdPtr(): inCmdPtr: " << *ptrArg << endl; 
 }
