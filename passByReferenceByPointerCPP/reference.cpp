@@ -45,5 +45,5 @@ void cmdPtr(char *ptrArg) {
 
 void cmdPtr1(char *ptrArg) {
     *ptrArg = 'C';
-    cout << "in function cmdPtr(): inCmdPtr: " << *ptrArg << endl; 
+    cout << "in function cmdPtr1(): *ptrArg: " << *ptrArg << endl; 
 }

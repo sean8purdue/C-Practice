@@ -42,3 +42,15 @@ a.out(10830,0x7fffa803f3c0) malloc: *** error for object 0x7fa2aa402600: pointer
 *** set a breakpoint in malloc_error_break to debug
 [1]    10830 abort      ./a.out
 ```
+
+## free or delete in file: del.cpp
+ free or delete do not delete the content of the pointer pointed to, the content is still there.
+ 
+ ```c
+Value of pvalue : 29495
+Value of pvalue after free : 29495
+Value of pvalue after free : 29494.990000
+Value of pvalue : 29495
+value of pv : 1
+Value of pvalue : 29495
+ ```
