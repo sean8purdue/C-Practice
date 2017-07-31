@@ -1,5 +1,7 @@
 # CPP pass by reference vs pointer
 
+Ref [1](http://www.geeksforgeeks.org/passing-by-pointer-vs-passing-by-reference-in-c/) :http://www.geeksforgeeks.org/passing-by-pointer-vs-passing-by-reference-in-c/
+
 ## 1. pass by pointer1
 In `main()`: create a `char * cmd`, pass it's value 0 (the address) to subfunction `getCmd(char *)`. The passing process is : main will create a **separate variable `arg1`**, which is a  `char * ` in his Stack top (lower address, since stack grow downward). 
 `char * arg1 = cmd;` 
@@ -57,4 +59,42 @@ Safely free the pointer:    // after free assign `cmd1 to NULL`
 ```c
 free(cmd1);
 cmd1 = NULL;
+```
+
+## Pass by reference 1
+1. reference can't be reassigned, it's not variable  
+	pointer can be reassigned.
+
+```cpp
+void cmdRef(char&);
+
+int main() {
+    char ref;
+    cout << ref << endl;
+    //print A
+    
+    char ptrChar;
+    char *ptr = &ptrChar;
+    cmdPtr(ptr);
+    cout << "in main ptrChar: " << ptrChar << endl;
+    // print nothing (null)
+
+}
+
+void cmdRef(char& refArg) {
+    refArg = 'A';
+        char inCmdRef;
+
+    //refArg = &inCmdRef;
+    // compile error
+
+    refArg = 'A';
+}
+
+void cmdPtr(char *ptrArg) {
+    char inCmdPtr;
+    ptrArg = &inCmdPtr;
+    *ptrArg = 'B';
+    cout << "in function cmdPtr(): inCmdPtr: " << inCmdPtr << endl; 
+}
 ```

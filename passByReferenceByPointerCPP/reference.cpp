@@ -4,45 +4,39 @@ using namespace std;
 
 #define CMD 100
 
-void getCmd(char *);
-char * getCmd1();
+void cmdRef(char &);
+void cmdPtr(char *);
 
-void getCmdRef(char&);
-void getCmdRef1(char &);
+//void cmdRef1(char &);
+//char * getCmd1();
 
 int main() {
-    char cmdRef;
-    //getCmdRef(cmdRef);
-    //cout << cmdRef << endl;
+    char ref;
+    cmdRef(ref);
+    cout << ref << endl;
 
-    char *ref1;
+    char ptrChar;
+    char *ptr = &ptrChar;
+    cmdPtr(ptr);
+    cout << "in main ptrChar: " << ptrChar << endl;
+    // print nothing (null)
+
+    //char *ref1;
     //getCmdRef1(&ref1);
 }
 
-void getCmdRef(char& cmdRef) {
-    //cmdRef = (char *) malloc( CMD * sizeof(char) );
-    //memset(cmdRef , '\0', sizeof(*cmdRef ));
-    //strcpy(cmdRef , "hello world");
-    cmdRef = 's';
+void cmdRef(char& refArg) {
+    char inCmdRef;
 
+    //refArg = &inCmdRef;
+    // compile error
 
-
+    refArg = 'A';
 }
 
-void getCmdRef1(char& ref1) {
-
+void cmdPtr(char *ptrArg) {
+    char inCmdPtr;
+    ptrArg = &inCmdPtr;
+    *ptrArg = 'B';
+    cout << "in function cmdPtr(): inCmdPtr: " << inCmdPtr << endl; 
 }
-
-void getCmd(char *nCmd) {
-    nCmd = (char *) malloc( CMD * sizeof(char) );
-    memset(nCmd, '\0', sizeof(*nCmd));
-    strcpy(nCmd, "hello world");
-}
-
-char * getCmd1() {
-    char * cmd = (char *) malloc( CMD * sizeof(char) );
-    memset(cmd, '\0', sizeof(*cmd));
-    strcpy(cmd, "hello world");
-    return cmd;
-}
-
