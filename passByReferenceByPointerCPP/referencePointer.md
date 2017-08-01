@@ -2,6 +2,13 @@
 
 Ref [1](http://www.geeksforgeeks.org/passing-by-pointer-vs-passing-by-reference-in-c/) :http://www.geeksforgeeks.org/passing-by-pointer-vs-passing-by-reference-in-c/
 
+Pointers provide one way to refer indirectly to an object. Another way is through references. A reference is simply an alternative name for an object. Given a type `T`, the notation `T&` indicates a reference to an object of type T. Unlike pointers, which can be NULL, a reference in C++ must refer to an actual variable. When a reference is declared, its value must be initialized. Afterwards, any access to the reference is treated exactly as if it is an access to the underlying object.
+
+```cpp
+string author = "Samuel Clemens";
+ string& penName = author; // penName is an alias for author
+ penName = "Mark Twain";  // now author = “Mark Twain” cout << author; // outputs “Mark Twain”```
+
 ## 1. pass by pointer1
 In `main()`: create a `char * cmd`, pass it's value 0 (the address) to subfunction `getCmd(char *)`. The passing process is : main will create a **separate variable `arg1`**, which is a  `char * ` in his Stack top (lower address, since stack grow downward). 
 `char * arg1 = cmd;` 
