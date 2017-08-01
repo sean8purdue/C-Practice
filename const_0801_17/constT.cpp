@@ -39,5 +39,9 @@ int main() {
     *p3 = 300;
     printf("modify z with another non const int pointer: %d\n", z);
 
+    // test 2.2 const variable with non-const pointer
+    const int a = 5;
+    //int *p5 = &a;
+    const int *p6 = &a;
 
 }

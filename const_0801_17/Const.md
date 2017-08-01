@@ -56,5 +56,15 @@ The declaration `const int *p1 ` means, we want an int pointer, and we don't wan
     int *p3 = &z;
     *p3 = 300;
     printf("modify z with another non const int pointer: %d\n", z); // z:300
+```
 
+### 2.2 const variable with non-const pointer
+
+Compile error when try to assign non-const pointer to const variable.
+
+```cpp
+    // test 2.2 const variable with non-const pointer
+    const int a = 5;
+    int *p5 = &a; // compile error
+    const int *p6 = &a;  // OK
 ```
