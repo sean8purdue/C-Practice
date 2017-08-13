@@ -1,0 +1,24 @@
+Try to over write a char array in stack and memdump the locations
+   char wod[3]
+   char word[2]
+   
+1.When use scanf(), it seems like it will automatically add '\0' in the end of input char array, when you input ab, it stores as ab\0; 
+
+2. word[2] is in lower mem address than wod in MAC OS, since it declare later;
+3. When input 3 > 3 for word; it will over write the space of wor[];
+4. When input # = 3, scanf() add \0 in the forth byte after word[0], which is the address of wor[0]. and then printf() print nothing for wod[0], since the first byte is \0;
+
+5, when input # < 3, the program will not over write.
+
+6, there is no data alignment in this case,
+but if you add integer or other type variables in the stack, it will have data alignment. Also depends on the size of char array and integer declare order(before or after char array).
+see scan5.c
+
+
+char wod[3];  \\ "ab"
+char word[5]; \\ "23333"
+memdump(word);
+0x5ec45a44: 32 33 33 33 33 61 62 00 00 00 00 00 60 5a c4 5e 23333ab.....`Z.^
+   
+   
+   
