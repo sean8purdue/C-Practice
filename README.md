@@ -28,6 +28,9 @@ Ref:http://www.studytonight.com/c/storage-classes-in-c.php
 	- byte operation
 	- refer to lectures by GRR_cs240.pdf (cs240 lectures)
 
+- [X] open system call
+	- call open twice, each will return a different file descriptor.
+
 ## Contributors
 
 @GuoLi (https://github.com/sean8purdue)
