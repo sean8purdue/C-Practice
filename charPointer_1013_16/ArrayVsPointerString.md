@@ -221,4 +221,41 @@ Note: Note the use of [] when using delete to deallocate an array.
 Here, we deallocate the string in the same function, but in some cases we might still need it after `SomeFunc()` ends, so we'd deallocate it later. Remember, we must keep a pointer to the beginning of the string because that's what is used to access the string and to deallocate it.
 
 
+## 4. Assing Value to Pointer:
 
+~~~c
+     int ch = 'C';
+         /*char * p = (char*) &ch;*/
+         char * p = (char*) &ch + 1;
+         *p = 65;
+         /*char * p = &ch;*/
+
+         printf("%c, %d, %p, %c\n", *p, *p, p, ch);
+
+~~~
+Get the address of ch : `0x7ffdb59c2e04` this running case, cast it to `char*` and add 1 and assign it to `p`. If we don't cast it, since `ch` is int, when we do `&ch+1`, it will actually add 4 to this address, assign it to pr, pr will be 0x7ffdb59c2e08.
+
+```bash
+A, 65, &ch = 0x7ffdb59c2e04, p = 0x7ffdb59c2e05, pr = 0x7ffdb59c2e08, C
+```
+
+~~~
+Breakpoint 1, main () at main.c:5
+5	int main() {
+(gdb) n
+6	    int ch = 'C';
+(gdb)
+8	        char * p = (char*) &ch + 1;
+(gdb)
+9	        *p = 65;
+(gdb)
+12	        printf("%c, %d, %p\n", *p, *p, p);
+(gdb) x/xw &ch
+0x7ffdb59c2e04:	0x00004143
+12	        printf("%c, %d, %p\n", *p, *p, p);
+(gdb) n
+A, 65, 0x7ffdb59c2e05
+13	        printf("%c", ch);
+(gdb)
+14	}
+~~~
